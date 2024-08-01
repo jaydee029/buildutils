@@ -14,7 +14,7 @@ jobs:
     build-Push-galasabld :
         name: Build and push Galasabld artefacts
         runs-on: ubuntu-latest
-       
+
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -68,7 +68,32 @@ jobs:
             - name: Push Galasabld executables
               uses: actions/upload-artifact@v4
               with:
-                path: bin/*
+                name: galasabld-linux-amd64
+                path: bin/galasabld-linux-amd64
+              
+            - name: Push Galasabld executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: galasabld-windows-amd64
+                path: bin/galasabld-windows-amd64
+
+            - name: Push Galasabld executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: galasabld-darwin-amd64
+                path: bin/galasabld-darwin-amd64
+              
+            - name: Push Galasabld executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: galasabld-darwin-arm64
+                path: bin/galasabld-darwin-arm64
+            
+            - name: Push Galasabld executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: galasabld-linux-s390x
+                path: bin/galasabld-linux-s390x
 
 
     build-Push-galasabld-ibm:
@@ -125,7 +150,7 @@ jobs:
     build-Push-openapi2beans:
         name: Build and push openapi2beans artefacts
         runs-on: ubuntu-latest
-          
+
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -178,7 +203,20 @@ jobs:
             - name: Push openapi2beans executables
               uses: actions/upload-artifact@v4
               with:
-                path: openapi2beans/bin/*
+                name: openapi2beans-darwin-arm64
+                path: openapi2beans/bin/openapi2beans-darwin-arm64
+              
+            - name: Push openapi2beans executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: openapi2beans-darwin-x86_64
+                path: openapi2beans/bin/openapi2beans-darwin-x86_64
+              
+            - name: Push openapi2beans executables
+              uses: actions/upload-artifact@v4
+              with:
+                name: openapi2beans-linux-x86_64
+                path: openapi2beans/bin/openapi2beans-linux-x86_64
               
             
             
